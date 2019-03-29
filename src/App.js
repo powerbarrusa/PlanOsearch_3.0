@@ -7,7 +7,23 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      login: false
+      login: false,
+      listings: ''
+    }
+  }
+
+  async componentDidMount(){
+    try {
+      const api = await fetch('http://localhost:3001')
+      const awaitApi = await api.json()
+      const listings = awaitApi.map(listing => {
+        return listing
+      })
+      this.setState({
+        listings: listings
+      })
+    } catch (error) {
+      console.log(error)
     }
   }
 
