@@ -1,8 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Problem Statement: PlanOmatic currently has no way to search available listings in their system. The app will allow one to see virtual tours and pertinent listing data without going through third-party, ad-filled sites.
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install` - installs dependencies
 
 ### `npm start`
 
@@ -12,57 +14,41 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+ERD: https://drive.google.com/file/d/1zCRdGABPnj9zZ5Hd40PGBkPRuvbmkgZy/view?usp=sharing
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Trello: https://trello.com/b/aDkhedWd/planosearch
 
-### `npm run build`
+Tech:
+1. React
+2. Express
+3. Knex
+4. PostreSQL
+5. Predictive Search
+6. CSS
+7. Bootstrap
+8. iFrame
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Color Palette:
+1. #808080 (128, 128, 128)
+2. #FF4500 (255, 69, 0)
+3. #000000 (0, 0, 0)
+4. #FFFFFF (255, 255, 255)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Wireframe: https://xd.adobe.com/view/688656e0-9f95-41ac-48d2-b79098a7f8a6-1eb7/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Routes:
 
-### `npm run eject`
+1. GET (/)
+      Brings in all virtual tours
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. POST (:id)
+      "Favorite" listings
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. GET (:username)
+      To log in
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. POST (:username)
+      To signup
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+5. DELETE (:id)
+      To unfavorite
