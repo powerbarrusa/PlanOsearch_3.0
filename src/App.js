@@ -35,7 +35,7 @@ class App extends Component {
 
   searchPage = () => {
     return this.state.login ? 
-    <Search /> : <Login login={this.login}/>
+    <Search listings={this.state.listings} /> : <Login login={this.login}/>
   }
 
   render() {
