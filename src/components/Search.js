@@ -3,13 +3,13 @@ import React from 'react'
 const Search = (props) => {
 
   return (
-    <div className="container">
+    <div className="App">
       <h1>
         Search
       </h1>
       {props.listings.map((listing, idx) => {
         return (
-          <div key={idx}>
+          <div className="row justify-content-around mb-3" key={idx}>
             <div className="card listing">
               <img className="card-img-top" src="..." alt="Card cap" />
               <div className="card-body">
