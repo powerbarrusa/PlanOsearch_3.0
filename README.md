@@ -27,6 +27,7 @@ Tech:
 6. CSS
 7. Bootstrap
 8. iFrame
+9. React Router DOM
 
 Color Palette:
 1. #808080 (128, 128, 128)
