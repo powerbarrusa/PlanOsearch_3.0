@@ -9,11 +9,8 @@ const Search = (props) => {
       </h1>
       {props.listings.map((listing, idx) => {
         return (
-          <div>
+          <div key={idx}>
             {listing.state}
-            <div className="d-none">
-              key={idx}
-            </div>
           </div>
           )
         })
