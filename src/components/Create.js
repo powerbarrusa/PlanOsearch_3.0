@@ -15,7 +15,7 @@ const Create = (props) => {
         <input defaultValue="" type="email" className="form-control w-50 mx-auto" id="current-email" aria-describedby="emailHelp" placeholder="Email" />
         <small id="emailHelp" className="form-text text-muted"></small>
       </div>
-      _____________________________________________
+      __________________________
       <div className="form-group">
         <label htmlFor="current-password"></label>
         <input defaultValue="" type="password" className="form-control w-50 mx-auto" id="current-password" placeholder="Password" />
