@@ -60,7 +60,7 @@ class App extends Component {
           <Switch>
             <Route path="/search" component={() => <Search listings={this.state.listings}/>} exact />
             <Route path="/favorites" component={() => <Favorites />} />
-            <Route path="/signout" component={() => <Signout />} />
+            <Route path="/signout" component={() => <Signout login={this.login} loginPage={this.loginPage} />} />
             {this.searchPage()}
           </Switch>
         </BrowserRouter>
