@@ -2,13 +2,22 @@ import React, { Component } from 'react'
 import './App.css'
 import Login from './components/Login'
 import Search from './components/Search'
+import Favorites from './components/Favorites'
+import Navbar from './components/Navbar'
+import Signout from './components/Signout'
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom"
+// import axios from 'axios'
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
       login: false,
-      listings: []
+      listings: [],
+      iframe: false,
+      query: '',
+      favoritesPage: false,
+      favorites: []
     }
   }
 
@@ -27,6 +36,12 @@ class App extends Component {
     }
   }
 
+  handleInputChange = () => {
+    this.setState({
+      query: this.search.value
+    })
+  }
+
   login = () => {
     this.setState({
       login: !this.state.login
@@ -41,7 +56,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.searchPage()}
+        <BrowserRouter>
+          <Switch>
+            <Route path="/search" component={() => <Search listings={this.state.listings}/>} exact />
+            <Route path="/favorites" component={() => <Favorites />} />
+            <Route path="/signout" component={() => <Signout />} />
+            {this.searchPage()}
+          </Switch>
+        </BrowserRouter>
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Search = (props) => {
+const Favorites = (props) => {
 
   return (
     <div className="App">
@@ -38,4 +38,4 @@ const Search = (props) => {
   )
 }
 
-export default Search
+export default Favorites
