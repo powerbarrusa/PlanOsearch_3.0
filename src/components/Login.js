@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Login = (props) => {
 
@@ -23,6 +24,9 @@ const Login = (props) => {
         <input defaultValue="password" type="password" className="form-control w-50 mx-auto" id="current-password" placeholder="Password" />
       </div>
       <button onClick={() => props.login()} type="button" className="login btn btn-primary btn-lg">Login</button>
+      <div className="column">
+        <Link to="/createuser">Need an account? Create one!</Link>
+      </div>
     </form>
   </div>
   )

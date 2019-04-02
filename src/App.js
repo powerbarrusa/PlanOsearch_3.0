@@ -5,6 +5,7 @@ import Search from './components/Search'
 import Favorites from './components/Favorites'
 import Navbar from './components/Navbar'
 import Signout from './components/Signout'
+import Create from './components/Create'
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom"
 // import axios from 'axios'
 
@@ -60,7 +61,8 @@ class App extends Component {
           <Switch>
             <Route path="/search" component={() => <Search listings={this.state.listings}/>} exact />
             <Route path="/favorites" component={() => <Favorites />} />
-            <Route path="/signout" component={() => <Signout login={this.login} loginPage={this.loginPage} />} />
+            <Route path="/createuser" component={() => <Create />} />
+            <Route path="/signout" component={() => <Signout />} />
             {this.searchPage()}
           </Switch>
         </BrowserRouter>
