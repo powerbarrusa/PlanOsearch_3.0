@@ -1,5 +1,6 @@
 import React from 'react'
 import StickyNav from './StickyNav.js'
+import Footer from './Footer'
 
 const Favorites = (props) => {
 
@@ -7,7 +8,7 @@ const Favorites = (props) => {
     <div className="App">
       <StickyNav />
       <h1 className="logo">
-        Search
+        Favorites
       </h1>
       {props.listings.map((listing, idx) => {
         return (
@@ -36,6 +37,7 @@ const Favorites = (props) => {
           )
         })
       }
+      <Footer />
     </div>
   )
 }

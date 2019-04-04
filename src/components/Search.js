@@ -1,5 +1,6 @@
 import React from 'react'
-import StickyNav from './StickyNav';
+import StickyNav from './StickyNav'
+import Footer from './Footer'
 
 const Search = (props) => {
 
@@ -36,6 +37,7 @@ const Search = (props) => {
           )
         })
       }
+      <Footer />
     </div>
   )
 }
