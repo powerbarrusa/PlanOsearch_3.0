@@ -1,6 +1,7 @@
 import React from 'react'
 import StickyNav from './StickyNav'
 import Footer from './Footer'
+import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 
 const Search = (props) => {
 
@@ -12,27 +13,24 @@ const Search = (props) => {
       </h1>
       {props.listings.map((listing, idx) => {
         return (
-          <div className="row justify-content-around mb-3" key={idx}>
-            <div className="card listing">
-              <img className="card-img-top" src="..." alt="" />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">{listing.street}, {listing.city}, {listing.state}, {listing.zip}</li>
-                <li className="list-group-item">{listing.beds_baths} - beds / baths</li>
-                <li className="list-group-item">{listing.sqft} sqft || {listing.price}</li>
-              </ul>
-              <div className="card-body">
-                <a href="/" className="card-link">iFrame</a>
-                <a href="/" className="card-link">
+          <div className="search">
+            <Card className="mb-3 ml-3" key={idx} style={{ width: '18rem' }}>
+              <Card.Img variant="top" src={listing.thumbnail} />
+              <Card.Body>
+                <Card.Title>{listing.street}, {listing.city}, {listing.state}, {listing.zip}</Card.Title>
+              </Card.Body>
+              <ListGroup className="list-group-flush">
+                <ListGroupItem>{listing.beds_baths} - beds / baths</ListGroupItem>
+                <ListGroupItem>{listing.sqft} sqft || {listing.price}</ListGroupItem>
+              </ListGroup>
+              <Card.Body>
+                <Card.Link href="#">Photos // Floor Plans</Card.Link>
+                <Card.Link href="#">
                   <i className="far fa-heart"></i>
                   <i className="fas fa-heart"></i>
-                </a>
-              </div>
-            </div>
-            <iframe title="iframe" floorwidth='650' src={listing.iframe} height="520" width="663" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
+                </Card.Link>
+              </Card.Body>
+            </Card>
           </div>
           )
         })

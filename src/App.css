@@ -15,8 +15,16 @@
   font-family: "Oleo Script Swash Caps";
 }
 
-.footer {
-  
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.favorites {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .mantra {
