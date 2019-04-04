@@ -1,9 +1,11 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 const Search = (props) => {
 
   return (
     <div className="App">
+      <Navbar />
       <h1 className="logo">
         Search
       </h1>
@@ -29,7 +31,7 @@ const Search = (props) => {
                 </a>
               </div>
             </div>
-            <iframe title="iframe" floorwidth='533' src={listing.iframe} height="415" width="553" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
+            <iframe title="iframe" floorwidth='650' src={listing.iframe} height="520" width="663" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
           </div>
           )
         })

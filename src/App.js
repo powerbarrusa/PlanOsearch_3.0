@@ -3,10 +3,9 @@ import './App.css'
 import Login from './components/Login'
 import Search from './components/Search'
 import Favorites from './components/Favorites'
-import Navbar from './components/Navbar'
 import Signout from './components/Signout'
 import Create from './components/Create'
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 // import axios from 'axios'
 
 class App extends Component {
