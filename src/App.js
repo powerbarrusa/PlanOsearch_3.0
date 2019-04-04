@@ -59,7 +59,7 @@ class App extends Component {
         <BrowserRouter>
           <Switch>
             <Route path="/search" component={() => <Search listings={this.state.listings}/>} exact />
-            <Route path="/favorites" component={() => <Favorites />} />
+            <Route path="/favorites" component={() => <Favorites listings={this.state.listings} />} />
             <Route path="/createuser" component={() => <Create />} />
             <Route path="/signout" component={() => <Signout />} />
             {this.searchPage()}

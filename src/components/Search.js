@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from './Navbar'
+import StickyNav from './StickyNav';
 
 const Search = (props) => {
 
   return (
     <div className="App">
-      <Navbar />
+      <StickyNav />
       <h1 className="logo">
         Search
       </h1>

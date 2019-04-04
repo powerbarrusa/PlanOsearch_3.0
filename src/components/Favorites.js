@@ -1,9 +1,11 @@
 import React from 'react'
+import StickyNav from './StickyNav.js'
 
 const Favorites = (props) => {
 
   return (
     <div className="App">
+      <StickyNav />
       <h1 className="logo">
         Search
       </h1>
@@ -29,7 +31,7 @@ const Favorites = (props) => {
                 </a>
               </div>
             </div>
-            <iframe title="iframe" floorwidth='533' src={listing.iframe} height="415" width="553" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
+            <iframe title="iframe" floorwidth='650' src={listing.iframe} height="520" width="663" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
           </div>
           )
         })
