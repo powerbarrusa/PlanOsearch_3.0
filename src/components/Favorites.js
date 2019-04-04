@@ -13,8 +13,8 @@ const Favorites = (props) => {
       </h1>
       {props.listings.map((listing, idx) => {
         return (
-          <div className="favorites">
-            <Card className="mb-3 ml-3" key={idx} style={{ width: '18rem' }}>
+          <div className="favorites" key={idx}>
+            <Card className="mb-3 ml-3" style={{ width: '18rem' }}>
               <Card.Img variant="top" src={listing.thumbnail} />
               <Card.Body>
                 <Card.Title>{listing.street}, {listing.city}, {listing.state}, {listing.zip}</Card.Title>

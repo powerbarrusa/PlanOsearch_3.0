@@ -1,6 +1,7 @@
 import React from 'react'
 import StickyNav from './StickyNav'
 import Footer from './Footer'
+import Plans from './Plans'
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 
 const Search = (props) => {
@@ -13,8 +14,8 @@ const Search = (props) => {
       </h1>
       {props.listings.map((listing, idx) => {
         return (
-          <div className="search">
-            <Card className="mb-3 ml-3" key={idx} style={{ width: '18rem' }}>
+          <div className="search" key={idx}>
+            <Card className="mb-3 ml-3" style={{ width: '18rem' }}>
               <Card.Img variant="top" src={listing.thumbnail} />
               <Card.Body>
                 <Card.Title>{listing.street}, {listing.city}, {listing.state}, {listing.zip}</Card.Title>
@@ -24,7 +25,7 @@ const Search = (props) => {
                 <ListGroupItem>{listing.sqft} sqft || {listing.price}</ListGroupItem>
               </ListGroup>
               <Card.Body>
-                <Card.Link href="#">Photos // Floor Plans</Card.Link>
+                <Card.Link href={listing.iframe}>Photos // Floor Plans</Card.Link>
                 <Card.Link href="#">
                   <i className="far fa-heart"></i>
                   <i className="fas fa-heart"></i>

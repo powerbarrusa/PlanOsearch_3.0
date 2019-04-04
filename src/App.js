@@ -5,6 +5,7 @@ import Search from './components/Search'
 import Favorites from './components/Favorites'
 import Signout from './components/Signout'
 import Create from './components/Create'
+import Plans from './components/Plans'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 // import axios from 'axios'
 
@@ -58,8 +59,9 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
-            <Route path="/search" component={() => <Search listings={this.state.listings}/>} exact />
+            <Route path="/search" component={() => <Search listings={this.state.listings} />} exact />
             <Route path="/favorites" component={() => <Favorites listings={this.state.listings} />} />
+            <Route path="/plans" component={() => <Plans listings={this.state.listings} />} />
             <Route path="/createuser" component={() => <Create />} />
             <Route path="/signout" component={() => <Signout />} />
             {this.searchPage()}
