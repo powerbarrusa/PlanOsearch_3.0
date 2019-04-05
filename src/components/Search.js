@@ -27,8 +27,7 @@ const Search = (props) => {
               <Card.Body>
                 <Card.Link href={listing.iframe}>Photos // Floor Plans</Card.Link>
                 <Card.Link href="#">
-                  <i className="far fa-heart"></i>
-                  <i className="fas fa-heart"></i>
+                  <i onClick={props.onFavorite} id={listing.id} className="far fa-heart"></i>
                 </Card.Link>
               </Card.Body>
             </Card>

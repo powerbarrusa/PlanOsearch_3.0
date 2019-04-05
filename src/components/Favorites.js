@@ -24,9 +24,8 @@ const Favorites = (props) => {
                 <ListGroupItem>{favorite.sqft} sqft || {favorite.price}</ListGroupItem>
               </ListGroup>
               <Card.Body>
-                <Card.Link href="#">Photos // Floor Plans</Card.Link>
-                <Card.Link href="#">
-                  <i className="far fa-heart"></i>
+                <Card.Link href="/">Photos // Floor Plans</Card.Link>
+                <Card.Link href="/">
                   <i className="fas fa-heart"></i>
                 </Card.Link>
               </Card.Body>
