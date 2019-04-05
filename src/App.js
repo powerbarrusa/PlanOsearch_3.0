@@ -24,8 +24,8 @@ class App extends Component {
 
   async componentDidMount(){
     try {
-      const api = await fetch('http://localhost:3001')
-      const faveApi = await fetch('http://localhost:3001/favorites')
+      const api = await fetch('https://shielded-reef-81003.herokuapp.com')
+      const faveApi = await fetch('https://shielded-reef-81003.herokuapp.com/favorites')
       const awaitApi = await api.json()
       const awaitApiFave = await faveApi.json()
       const favorites = awaitApiFave.map(favorite => {
