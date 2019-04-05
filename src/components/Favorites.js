@@ -11,17 +11,17 @@ const Favorites = (props) => {
       <h1 className="logo">
         Favorites
       </h1>
-      {props.listings.map((listing, idx) => {
+      {props.favorites.map((favorite, idx) => {
         return (
           <div className="favorites" key={idx}>
             <Card className="mb-3 ml-3" style={{ width: '18rem' }}>
-              <Card.Img variant="top" src={listing.thumbnail} />
+              <Card.Img variant="top" src={favorite.thumbnail} />
               <Card.Body>
-                <Card.Title>{listing.street}, {listing.city}, {listing.state}, {listing.zip}</Card.Title>
+                <Card.Title>{favorite.street}, {favorite.city}, {favorite.state}, {favorite.zip}</Card.Title>
               </Card.Body>
               <ListGroup className="list-group-flush">
-                <ListGroupItem>{listing.beds_baths} - beds / baths</ListGroupItem>
-                <ListGroupItem>{listing.sqft} sqft || {listing.price}</ListGroupItem>
+                <ListGroupItem>{favorite.beds_baths} - beds / baths</ListGroupItem>
+                <ListGroupItem>{favorite.sqft} sqft || {favorite.price}</ListGroupItem>
               </ListGroup>
               <Card.Body>
                 <Card.Link href="#">Photos // Floor Plans</Card.Link>

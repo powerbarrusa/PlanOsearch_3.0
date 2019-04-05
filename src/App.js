@@ -15,22 +15,28 @@ class App extends Component {
     this.state = {
       login: false,
       listings: [],
+      favorites: [],
       iframe: false,
       query: '',
-      favoritesPage: false,
-      favorites: []
+      favoritesPage: false
     }
   }
 
   async componentDidMount(){
     try {
       const api = await fetch('http://localhost:3001')
+      const faveApi = await fetch('http://localhost:3001/favorites')
       const awaitApi = await api.json()
+      const awaitApiFave = await faveApi.json()
+      const favorites = awaitApiFave.map(favorite => {
+        return favorite
+      })
       const listings = awaitApi.map(listing => {
         return listing
       })
       this.setState({
-        listings: listings
+        listings: listings,
+        favorites: favorites
       })
     } catch (error) {
       console.log(error)
@@ -60,7 +66,7 @@ class App extends Component {
         <BrowserRouter>
           <Switch>
             <Route path="/search" component={() => <Search listings={this.state.listings} />} exact />
-            <Route path="/favorites" component={() => <Favorites listings={this.state.listings} />} />
+            <Route path="/favorites" component={() => <Favorites favorites={this.state.favorites} />} />
             <Route path="/plans" component={() => <Plans listings={this.state.listings} />} />
             <Route path="/createuser" component={() => <Create />} />
             <Route path="/signout" component={() => <Signout />} />
