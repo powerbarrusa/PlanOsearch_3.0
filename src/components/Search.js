@@ -1,7 +1,6 @@
 import React from 'react'
 import StickyNav from './StickyNav'
 import Footer from './Footer'
-import Plans from './Plans'
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
 
 const Search = (props) => {
