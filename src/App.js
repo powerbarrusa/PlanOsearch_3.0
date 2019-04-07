@@ -6,8 +6,8 @@ import Favorites from './components/Favorites'
 import Signout from './components/Signout'
 import Create from './components/Create'
 import Plans from './components/Plans'
+import Autocomplete from './components/Autocomplete'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-// import axios from 'axios'
 
 class App extends Component {
   constructor(){
@@ -18,6 +18,7 @@ class App extends Component {
       favorites: [],
       iframe: false,
       query: '',
+      results: [],
       favoritesPage: false
     }
   }
@@ -61,7 +62,7 @@ class App extends Component {
   }
 
   unFavorite = (e) => {
-    fetch(`https://shielded-reef-81003.herokuapp.com/favorites/${e.target}`, {
+    fetch(`http://localhost:3001/favorites/${e.target}`, {
       method: 'DELETE'
     })
     .then(response => {response.json()})
@@ -96,11 +97,24 @@ class App extends Component {
     })
   }
 
+  // listingHearted = (id) => {
+  //   const hearted = this.state.listings.map(listing => {
+  //     if (listing.id === id) {
+  //       listing.hearted = !listing.hearted
+  //     }
+  //     return listing
+  //   })
+  //   this.setState({
+  //     listings: hearted
+  //   })
+  // }
+
   render() {
     return (
       <div className="App">
         <BrowserRouter>
           <Switch>
+            <Route path="/autocomplete" component={() => <Autocomplete />} />
             <Route path="/search" component={() => <Search onFavorite={this.onFavorite} listings={this.state.listings} />} exact />
             <Route path="/favorites" component={() => <Favorites unFavorite={this.unFavorite} favorites={this.state.favorites} />} />
             <Route path="/plans" component={() => <Plans listings={this.state.listings} />} />
