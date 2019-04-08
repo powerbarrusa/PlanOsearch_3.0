@@ -5,7 +5,7 @@ const Footer = (props) => {
 
   return (
   <div className="App">
-    <Navbar sticky="bottom" collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar sticky="bottom" collapseOnSelect bg="dark" variant="dark">
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">

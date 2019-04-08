@@ -6,6 +6,7 @@ import Signout from './components/Signout'
 import Create from './components/Create'
 import Plans from './components/Plans'
 import Autocomplete from './components/Autocomplete'
+import Modal from  './components/Modal'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 class App extends Component {
@@ -118,6 +119,7 @@ class App extends Component {
             <Route path="/plans" component={() => <Plans listings={this.state.listings} />} />
             <Route path="/createuser" component={() => <Create />} />
             <Route path="/signout" component={() => <Signout />} />
+            <Route path="/modal" component={() => <Modal />} />
             {this.searchPage()}
           </Switch>
         </BrowserRouter>
