@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Suggestions from './Suggestions'
 import StickyNav from './StickyNav'
-import Footer from './Footer'
+import { InputGroup, FormControl, Button } from 'react-bootstrap'
 
 const { API_KEY } = process.env
 const API_URL = 'http://localhost:3001'
@@ -37,19 +37,24 @@ class Autocomplete extends Component {
 
   render() {
     return (
-      <form>
+      <div>
         <StickyNav />
-        <h1 className="logo">
+        <h1 className="headers">
           Search
         </h1>
-        <input
-          placeholder="Search for..."
-          ref={input => this.search = input}
-          onChange={this.handleInputChange}
-        />
+        <InputGroup className="mb-3 inputgroup">
+          <FormControl
+            placeholder="Search for a listing..."
+            ref={input => this.search = input}
+            onChange={this.handleInputChange}
+            className="inputfield"
+          />
+          <InputGroup.Append>
+            <Button className="button" variant="outline-secondary">SEARCH</Button>
+          </InputGroup.Append>
+        </InputGroup>
         <Suggestions results={this.state.results} />
-        <Footer />
-      </form>
+      </div>
     )
   }
 }

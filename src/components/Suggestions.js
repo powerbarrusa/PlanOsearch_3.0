@@ -14,9 +14,9 @@ const Suggestions = (props) => {
           <ListGroupItem>{result.sqft} sqft || {result.price}</ListGroupItem>
         </ListGroup>
         <Card.Body>
-          <Card.Link href={result.iframe}>Photos // Floor Plans</Card.Link>
-          <Card.Link href="#">
-            <i onClick={props.onFavorite} id={result.id} className="far fa-heart"></i>
+          <Card.Link className="iframe" href={result.iframe}>Photos // Floor Plans</Card.Link>
+          <Card.Link href="/favorites">
+            <i className="far fa-heart"></i>
           </Card.Link>
         </Card.Body>
       </Card>

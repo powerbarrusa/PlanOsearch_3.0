@@ -4,9 +4,8 @@ import Login from './components/Login'
 import Favorites from './components/Favorites'
 import Signout from './components/Signout'
 import Create from './components/Create'
-import Plans from './components/Plans'
 import Autocomplete from './components/Autocomplete'
-import Modal from  './components/Modal'
+import Plan from './components/Plan'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 class App extends Component {
@@ -17,6 +16,7 @@ class App extends Component {
       listings: [],
       favorites: [],
       iframe: false,
+      hearted: false,
       query: '',
       results: [],
       favoritesPage: false
@@ -77,7 +77,6 @@ class App extends Component {
   onFavorite = (e) => {
     const url = `http://localhost:3001/addFave`
     let favey = this.state.listings.filter(listing => listing.id === Number(e.target.id))
-
     console.log("id", favey)
     fetch(url, {
       method: 'POST',
@@ -91,35 +90,22 @@ class App extends Component {
     .then(response => console.log('Success:', JSON.stringify(response)))
     .catch(error => console.error('Error:', error));
     let newFaves = [...this.state.favorites]
-    newFaves.push({...e, id: this.state.favorites.length})
+    newFaves.push({...favey, id: this.state.favorites.length})
     this.setState({
       favorites: newFaves
     })
   }
-
-  // listingHearted = (id) => {
-  //   const hearted = this.state.listings.map(listing => {
-  //     if (listing.id === id) {
-  //       listing.hearted = !listing.hearted
-  //     }
-  //     return listing
-  //   })
-  //   this.setState({
-  //     listings: hearted
-  //   })
-  // }
 
   render() {
     return (
       <div className="App">
         <BrowserRouter>
           <Switch>
-            <Route path="/autocomplete" component={() => <Autocomplete onFavorite={this.onFavorite} listings={this.state.listings} />} exact />} />
-            <Route path="/favorites" component={() => <Favorites unFavorite={this.unFavorite} favorites={this.state.favorites} />} />
-            <Route path="/plans" component={() => <Plans listings={this.state.listings} />} />
+            <Route path="/autocomplete" component={() => <Autocomplete onFavorite={this.onFavorite} listings={this.state.listings} hearted={this.state.hearted} />} exact />} />
+            <Route path="/favorites" component={() => <Favorites unFavorite={this.unFavorite} favorites={this.state.favorites} hearted={this.state.hearted} />} />
             <Route path="/createuser" component={() => <Create />} />
             <Route path="/signout" component={() => <Signout />} />
-            <Route path="/modal" component={() => <Modal />} />
+            <Route path="/plan" component={() => <Plan />} />
             {this.searchPage()}
           </Switch>
         </BrowserRouter>

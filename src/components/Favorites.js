@@ -2,13 +2,14 @@ import React from 'react'
 import StickyNav from './StickyNav.js'
 import Footer from './Footer'
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Favorites = (props) => {
 
   return (
     <div className="App">
       <StickyNav />
-      <h1 className="logo">
+      <h1 className="headers">
         Favorites
       </h1>
       {props.favorites.map((favorite, idx) => {
@@ -24,8 +25,8 @@ const Favorites = (props) => {
                 <ListGroupItem>{favorite.sqft} sqft || {favorite.price}</ListGroupItem>
               </ListGroup>
               <Card.Body>
-                <Card.Link href="/">Photos // Floor Plans</Card.Link>
-                <Card.Link href="/">
+                <Link to="/plan" className="iframe spacey">Photos // Floor Plans</Link>
+                <Card.Link>
                   <i className="fas fa-heart"></i>
                 </Card.Link>
               </Card.Body>

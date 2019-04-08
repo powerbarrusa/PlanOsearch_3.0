@@ -10,11 +10,11 @@ const StickyNav = (props) => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="http://localhost:3000/autocomplete">Search</Nav.Link>
-          <Nav.Link href="http://localhost:3000/favorites">Favorites</Nav.Link>
+          <Nav.Link className="navitems" href="http://localhost:3000/autocomplete">Search</Nav.Link>
+          <Nav.Link className="navitems" href="http://localhost:3000/favorites">Favorites</Nav.Link>
         </Nav>
         <Nav>
-          <Nav.Link href="http://localhost:3000/signout">Sign Out</Nav.Link>
+          <Nav.Link className="navitems" href="http://localhost:3000/signout">Sign Out</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

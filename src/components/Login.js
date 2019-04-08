@@ -25,7 +25,7 @@ const Login = (props) => {
       </div>
       <button onClick={() => props.login()} type="button" className="login btn btn-primary btn-lg">Login</button>
       <div className="column">
-        <Link to="/createuser">Need an account? Create one!</Link>
+        <Link className="createuser" to="/createuser">Need an account? Create one!</Link>
       </div>
     </form>
   </div>
