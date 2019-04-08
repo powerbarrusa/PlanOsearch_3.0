@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Suggestions from './Suggestions'
+import StickyNav from './StickyNav'
+import Footer from './Footer'
 
 const { API_KEY } = process.env
 const API_URL = 'http://localhost:3001'
@@ -24,7 +26,7 @@ class Autocomplete extends Component {
     this.setState({
       query: this.search.value
     }, () => {
-      if (this.state.query && this.state.query.length > 1) {
+      if (this.state.query && this.state.query.length > 5) {
         if (this.state.query.length % 2 === 0) {
           this.getInfo()
         }
@@ -36,12 +38,17 @@ class Autocomplete extends Component {
   render() {
     return (
       <form>
+        <StickyNav />
+        <h1 className="logo">
+          Search
+        </h1>
         <input
           placeholder="Search for..."
           ref={input => this.search = input}
           onChange={this.handleInputChange}
         />
         <Suggestions results={this.state.results} />
+        <Footer />
       </form>
     )
   }

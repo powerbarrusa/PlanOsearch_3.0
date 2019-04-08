@@ -6,11 +6,11 @@ const StickyNav = (props) => {
   return (
   <div className="App">
     <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand className="nav-logo" href="http://localhost:3000/search">PlanOsearch</Navbar.Brand>
+      <Navbar.Brand className="nav-logo" href="http://localhost:3000/autocomplete">PlanOsearch</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="http://localhost:3000/search">Search</Nav.Link>
+          <Nav.Link href="http://localhost:3000/autocomplete">Search</Nav.Link>
           <Nav.Link href="http://localhost:3000/favorites">Favorites</Nav.Link>
         </Nav>
         <Nav>

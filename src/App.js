@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
 import Login from './components/Login'
-import Search from './components/Search'
 import Favorites from './components/Favorites'
 import Signout from './components/Signout'
 import Create from './components/Create'
@@ -58,7 +57,7 @@ class App extends Component {
 
   searchPage = () => {
     return this.state.login ? 
-    <Search listings={this.state.listings} /> : <Login login={this.login}/>
+    <Autocomplete listings={this.state.listings} /> : <Login login={this.login}/>
   }
 
   unFavorite = (e) => {
@@ -114,8 +113,7 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
-            <Route path="/autocomplete" component={() => <Autocomplete />} />
-            <Route path="/search" component={() => <Search onFavorite={this.onFavorite} listings={this.state.listings} />} exact />
+            <Route path="/autocomplete" component={() => <Autocomplete onFavorite={this.onFavorite} listings={this.state.listings} />} exact />} />
             <Route path="/favorites" component={() => <Favorites unFavorite={this.unFavorite} favorites={this.state.favorites} />} />
             <Route path="/plans" component={() => <Plans listings={this.state.listings} />} />
             <Route path="/createuser" component={() => <Create />} />
