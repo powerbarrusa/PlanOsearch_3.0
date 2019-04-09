@@ -16,7 +16,6 @@ class App extends Component {
       listings: [],
       favorites: [],
       iframe: false,
-      hearted: false,
       query: '',
       results: [],
       favoritesPage: false

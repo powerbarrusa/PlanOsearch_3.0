@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Suggestions from './Suggestions'
 import StickyNav from './StickyNav'
-import { InputGroup, FormControl, Button } from 'react-bootstrap'
+import { InputGroup, FormControl } from 'react-bootstrap'
 
 const { API_KEY } = process.env
 const API_URL = 'http://localhost:3001'
@@ -10,7 +10,8 @@ const API_URL = 'http://localhost:3001'
 class Autocomplete extends Component {
   state = {
     query: '',
-    results: []
+    results: [],
+    heart: false
   }
 
   getInfo = () => {
@@ -35,6 +36,12 @@ class Autocomplete extends Component {
     })
   }
 
+  hearted = (e) => {
+    this.setState({
+      heart: !this.state.heart
+    })
+  }
+
   render() {
     return (
       <div>
@@ -49,11 +56,8 @@ class Autocomplete extends Component {
             onChange={this.handleInputChange}
             className="inputfield"
           />
-          <InputGroup.Append>
-            <Button className="button" variant="outline-secondary">SEARCH</Button>
-          </InputGroup.Append>
         </InputGroup>
-        <Suggestions results={this.state.results} />
+        <Suggestions hearted={this.hearted} heart={this.state.heart} results={this.state.results} />
       </div>
     )
   }

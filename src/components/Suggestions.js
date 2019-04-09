@@ -15,8 +15,8 @@ const Suggestions = (props) => {
         </ListGroup>
         <Card.Body>
           <Card.Link className="iframe" href={result.iframe}>Photos // Floor Plans</Card.Link>
-          <Card.Link href="/favorites">
-            <i className="far fa-heart"></i>
+          <Card.Link >
+            <i onClick={() => props.hearted()} className={props.heart ? "fas fa-heart" : "far fa-heart"}></i>
           </Card.Link>
         </Card.Body>
       </Card>

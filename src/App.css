@@ -8,6 +8,15 @@
   background-color: orangered !important;
   margin-bottom: 20px;
   margin-top: 10px;
+  height: 60px;
+  width: 130px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.loginfield {
+  height: 55px;
+  width: 400px !important;
 }
 
 .logo {

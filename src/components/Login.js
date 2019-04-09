@@ -16,14 +16,14 @@ const Login = (props) => {
     <div className="spacer"></div>
       <div className="form-group">
         <label htmlFor="current-email"></label>
-        <input defaultValue="barr@covrigaru.com" type="email" className="form-control w-50 mx-auto" id="current-email" aria-describedby="emailHelp" placeholder="Email" />
+        <input defaultValue="" type="email" className="loginfield form-control w-50 mx-auto " id="current-email" aria-describedby="emailHelp" placeholder="Email" />
         <small id="emailHelp" className="form-text text-muted"></small>
       </div>
       <div className="form-group">
         <label htmlFor="current-password"></label>
-        <input defaultValue="password" type="password" className="form-control w-50 mx-auto" id="current-password" placeholder="Password" />
+        <input defaultValue="" type="password" className="loginfield form-control w-50 mx-auto" id="enter-password" placeholder="Password" />
       </div>
-      <button onClick={() => props.login()} type="button" className="login btn btn-primary btn-lg">Login</button>
+      <button onClick={() => props.login()} type="button" className="login btn btn-primary btn-lg">LOGIN</button>
       <div className="column">
         <Link className="createuser" to="/createuser">Need an account? Create one!</Link>
       </div>
